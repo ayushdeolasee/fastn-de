@@ -5,15 +5,23 @@ margin: $ds.spaces.vertical-gap.zero
 spacing: $ds.spaces.vertical-gap.zero
 background.solid: $ds.colors.background.step-1
 
+
 -- ds.primary-button: Fifthtry
 size: medium 
 
 -- ds.copy-regular: Top Bar
 -- end: ds.row
--- ds.column: 
--- ds.copy-regular: Main
--- end: ds.column
--- ds.column: 
+-- ds.container: 
+-- hello-world:
+-- end: ds.container
+-- ds.row: 
+background.solid: $ds.colors.background.step-1
+
 -- ds.copy-regular: Bottom Bar
--- end: ds.column
+-- end: ds.row
 -- end: ds.page
+
+
+-- web-component hello-world:
+js: $assets.files.js.main.js
+-- end: hello-world
