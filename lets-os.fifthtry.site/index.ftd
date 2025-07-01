@@ -1,0 +1,19 @@
+-- ds.page: OS
+margin: $ds.spaces.vertical-gap.zero
+
+-- ds.row: 
+spacing: $ds.spaces.vertical-gap.zero
+background.solid: $ds.colors.background.step-1
+
+-- ds.primary-button: Fifthtry
+size: medium 
+
+-- ds.copy-regular: Top Bar
+-- end: ds.row
+-- ds.column: 
+-- ds.copy-regular: Main
+-- end: ds.column
+-- ds.column: 
+-- ds.copy-regular: Bottom Bar
+-- end: ds.column
+-- end: ds.page

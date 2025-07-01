@@ -1,0 +1,19 @@
+-- import: fastn
+
+-- fastn.package: lets-os-template.fifthtry.site
+
+-- fastn.dependency: design-system.fifthtry.site
+-- fastn.dependency: lets-auth.fifthtry.site
+-- fastn.dependency: lets-os.fifthtry.site
+provided-via: lets-os-template.fifthtry.site/lets-os
+
+-- fastn.auto-import: lets-os-template.fifthtry.site/lets-os
+-- fastn.auto-import: design-system.fifthtry.site as ds
+
+-- fastn.app: OS App
+mount-point: /
+package: lets-os.fifthtry.site
+
+-- fastn.app: Auth App
+mount-point: /-/auth/
+package: lets-auth.fifthtry.site
