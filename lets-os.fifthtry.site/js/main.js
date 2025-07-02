@@ -10,6 +10,7 @@ class HelloWorld extends HTMLElement {
       .parent {
         height: 500px;
         position: relative;
+        overflow: hidden;
       } 
       .window {
         min-width: 350px;
@@ -41,63 +42,78 @@ class HelloWorld extends HTMLElement {
         window.addEventListener('mousedown', () => {
           window.style.zIndex = z;
           z++; 
-        })
-
+        });
 
         window.addEventListener('window-ready', () => {
           let topBar = window.shadowRoot.querySelector('.top-bar');
           let corner = window.shadowRoot.querySelector('.corner');
-          if (!topBar || !corner) return;
+          let closeButton = window.shadowRoot.querySelector('.close-button');
+          if (!topBar || !corner || !closeButton) return;
         
-
           topBar.addEventListener('mousedown', (event) => {
             event.preventDefault()
             let l = window.offsetLeft;
             let t = window.offsetTop;
             let startX = event.pageX;
             let startY = event.pageY;
+            const parent = window.parentElement;
+            const drag = (event) => {
+              const dx = event.pageX - startX;
+              const dy = event.pageY - startY;
+              let newLeft = l + dx;
+              let newTop = t + dy;
+              newLeft = Math.max(0, Math.min(newLeft, parent.clientWidth - window.offsetWidth));
+              newTop = Math.max(0, Math.min(newTop, parent.clientHeight - window.offsetHeight));
+              window.style.left = newLeft + 'px';
+              window.style.top = newTop + 'px';
+            }
 
-          const drag = (event) => {
-            
-            window.style.left = l + (event.pageX - startX) + 'px';
-            window.style.top = t + (event.pageY - startY) + 'px';
-          }
-
-          const mouseup = () => {
-            document.removeEventListener('mousemove', drag)
-            document.removeEventListener('mouseup', mouseup)
-          }
-          document.addEventListener('mousemove', drag)
-          document.addEventListener('mouseup', mouseup )
-        })
+            const mouseup = () => {
+              document.removeEventListener('mousemove', drag)
+              document.removeEventListener('mouseup', mouseup)
+            }
+            document.addEventListener('mousemove', drag)
+            document.addEventListener('mouseup', mouseup )
+          });
         
-        corner.addEventListener('mousedown', (event) => {
-          event.preventDefault()
-          let w = window.clientWidth
-          let h = window.clientHeight
-      
-          let startX = event.pageX
-          let startY = event.pageY
-      
-          const drag = (event) => {
-            
-      
-            window.style.width = w + (event.pageX - startX) + 'px'
-            window.style.height = h + (event.pageY - startY) + 'px'
-          }
-      
-          const mouseup = () => {
-            document.removeEventListener('mousemove', drag)
-            document.removeEventListener('mouseup', mouseup)
-          }
-      
-          document.addEventListener('mousemove', drag)
-          document.addEventListener('mouseup', mouseup)
-        })
-        }, { once: true })
-    })
-  }
-} 
+          corner.addEventListener('mousedown', (event) => {
+            event.preventDefault()
+            let w = window.clientWidth
+            let h = window.clientHeight
+        
+            let startX = event.pageX
+            let startY = event.pageY
+            const parent = window.parentElement;
+        
+            const drag = (event) => {
+              const currentLeft = window.offsetLeft;
+              const currentTop = window.offsetTop;
+              let newWidth = w + (event.pageX - startX);
+              let newHeight = h + (event.pageY - startY);
+              const maxWidth = parent.clientWidth - currentLeft;
+              const maxHeight = parent.clientHeight - currentTop;
+              newWidth = Math.max(100, Math.min(newWidth, maxWidth));
+              newHeight = Math.max(100, Math.min(newHeight, maxHeight));
+              window.style.width = newWidth + 'px';
+              window.style.height = newHeight + 'px';
+            }
+        
+            const mouseup = () => {
+              document.removeEventListener('mousemove', drag)
+              document.removeEventListener('mouseup', mouseup)
+            }
+        
+            document.addEventListener('mousemove', drag)
+            document.addEventListener('mouseup', mouseup)
+          });
+          closeButton.addEventListener('click', (event) => {
+            event.preventDefault();
+            window.remove();
+          });
+        });
+      });
+    }
+}
 
 class MyWindow extends HTMLElement {
   constructor() {
@@ -149,7 +165,7 @@ class MyWindow extends HTMLElement {
     </style>
     <div class="container">
       <div class="top-bar">
-        <button>close</button>
+        <button class="close-button">close</button>
       </div>
       <div class="iframe">
         <iframe src="https://www.fifthtry.com/" title="Fifthtry Site"></iframe>
