@@ -1,0 +1,24 @@
+-- component window:
+string url:
+integer z: 
+
+-- ftd.container:
+z-index: $window.z
+margin.px: 100
+height: hug-content
+width: hug-content
+
+-- ftd.container:
+background.solid: $ds.colors.background.step-1
+border-color: $ds.colors.border
+${on-click}: $ftd.increment($a = $window.z)
+
+-- ds.secondary-button: close
+
+-- end: ftd.container
+
+-- ftd.iframe:
+src: $window.url
+
+-- end: ftd.container
+-- end: window

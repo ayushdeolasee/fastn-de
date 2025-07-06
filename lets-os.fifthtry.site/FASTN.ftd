@@ -9,15 +9,9 @@ system-is-confidential: false
 
 -- fastn.auto-import: lets-os.fifthtry.site/assets
 
-;; this is a system: alias must be ds
 -- fastn.auto-import: design-system.fifthtry.site as ds
-
-;; this is a system: alias must be lets-auth
 -- fastn.auto-import: lets-auth.fifthtry.site as lets-auth
-
-;; this is a system: alias must be lets-os
 -- fastn.auto-import: lets-os.fifthtry.site as lets-os
-
 
 ;; -- fastn.migration: 0001-initial-migration
 

@@ -1,4 +1,7 @@
--- ds.page: OS
+-- import: lets-os.fifthtry.site/ui/window as _
+export: window
+
+-- ds.page: DE
 margin: $ds.spaces.vertical-gap.zero
 
 -- ds.row: 
@@ -11,17 +14,44 @@ size: medium
 
 -- ds.copy-regular: Top Bar
 -- end: ds.row
--- ds.container: 
--- hello-world:
--- end: ds.container
+-- ftd.container: 
+height: fill-container
+width: fill-container
+
+-- ftd.container:
+anchor: parent
+top.px: 0
+left.px: 0
+
+-- window:
+url: https://www.fifthtry.com/
+z: 3
+
+-- end: ftd.container
+
+-- ftd.container:
+anchor: parent
+top.px: 25
+left.px: 5
+
+-- window:
+url: https://www.google.com/
+z: 2 
+
+-- end: ftd.container
+
+-- end: ftd.container
 -- ds.row: 
 background.solid: $ds.colors.background.step-1
-
--- ds.copy-regular: Bottom Bar
+-- bottom-bar:
 -- end: ds.row
 -- end: ds.page
 
+-- web-component main-component:
+js: $assets.files.js.components.js
+-- end: main-component
 
--- web-component hello-world:
-js: $assets.files.js.main.js
--- end: hello-world
+-- web-component bottom-bar:
+js: $assets.files.js.components.js
+-- end: bottom-bar
+
