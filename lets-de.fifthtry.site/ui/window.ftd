@@ -1,9 +1,8 @@
 -- component window:
 string url:
-integer z: 
 
 -- ftd.container:
-z-index: $window.z
+;; z-index: $z
 margin.px: 100
 height: hug-content
 width: hug-content

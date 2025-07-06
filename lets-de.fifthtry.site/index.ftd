@@ -25,7 +25,6 @@ left.px: 0
 
 -- window:
 url: https://www.fifthtry.com/
-z: 3
 
 -- end: ftd.container
 
@@ -36,7 +35,6 @@ left.px: 5
 
 -- window:
 url: https://www.google.com/
-z: 2 
 
 -- end: ftd.container
 
@@ -54,4 +52,3 @@ js: $assets.files.js.components.js
 -- web-component bottom-bar:
 js: $assets.files.js.components.js
 -- end: bottom-bar
-
