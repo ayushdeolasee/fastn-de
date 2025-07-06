@@ -11,7 +11,7 @@ width: hug-content
 -- ftd.container:
 background.solid: $ds.colors.background.step-1
 border-color: $ds.colors.border
-${on-click}: $ftd.increment($a = $window.z)
+;; ${on-click}: $ftd.increment($a = $window.z)
 
 -- ds.secondary-button: close
 

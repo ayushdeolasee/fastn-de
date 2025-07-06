@@ -1,4 +1,4 @@
--- import: lets-os.fifthtry.site/ui/window as _
+-- import: lets-de.fifthtry.site/ui/window as _
 export: window
 
 -- ds.page: DE
