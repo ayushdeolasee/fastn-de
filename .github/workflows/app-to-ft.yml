@@ -6,7 +6,6 @@ on:
     paths:
       - lets-de.fifthtry.site/**
       - backend/**
-      - scripts/*.sh
       - .github/workflows/app-to-ft.yml
 
 

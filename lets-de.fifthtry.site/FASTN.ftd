@@ -1,7 +1,7 @@
 -- import: fastn
 
 -- fastn.package: lets-de.fifthtry.site
-system: lets-os
+system: lets-de
 system-is-confidential: false
 
 -- fastn.dependency: design-system.fifthtry.site

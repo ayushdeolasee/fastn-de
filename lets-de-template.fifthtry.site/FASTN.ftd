@@ -3,7 +3,6 @@
 -- fastn.package: lets-de-template.fifthtry.site
 
 -- fastn.dependency: design-system.fifthtry.site
--- fastn.dependency: lets-auth.fifthtry.site
 -- fastn.dependency: lets-de.fifthtry.site
 provided-via: lets-de-template.fifthtry.site/lets-de
 
@@ -13,7 +12,3 @@ provided-via: lets-de-template.fifthtry.site/lets-de
 -- fastn.app: DE App
 mount-point: /
 package: lets-de.fifthtry.site
-
--- fastn.app: Auth App
-mount-point: /-/auth/
-package: lets-auth.fifthtry.site
