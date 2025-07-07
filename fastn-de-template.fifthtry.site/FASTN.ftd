@@ -1,0 +1,14 @@
+-- import: fastn
+
+-- fastn.package: fastn-de-template.fifthtry.site
+
+-- fastn.dependency: design-system.fifthtry.site
+-- fastn.dependency: fastn-de.fifthtry.site
+provided-via: fastn-de-template.fifthtry.site/fastn-de
+
+-- fastn.auto-import: fastn-de-template.fifthtry.site/fastn-de
+-- fastn.auto-import: design-system.fifthtry.site as ds
+
+-- fastn.app: DE App
+mount-point: /
+package: fastn-de.fifthtry.site

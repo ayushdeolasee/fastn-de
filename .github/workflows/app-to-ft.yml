@@ -1,10 +1,10 @@
-name: Upload lets-de to FifthTry
+name: Upload fastn-de to FifthTry
 
 on:
   push:
     branches: [ main ]
     paths:
-      - lets-de.fifthtry.site/**
+      - fastn-de.fifthtry.site/**
       - backend/**
       - .github/workflows/app-to-ft.yml
 

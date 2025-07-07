@@ -1,10 +1,10 @@
-name: Upload lets-de-template to FifthTry
+name: Upload fastn-de-template to FifthTry
 
 on:
   push:
     branches: [ main ]
     paths:
-      - lets-de-template.fifthtry.site/**
+      - fastn-de-template.fifthtry.site/**
       - .github/workflows/template-to-ft.yml
 
 
@@ -19,4 +19,4 @@ jobs:
       - run: sh -c "$(curl -fsSL https://fastn.com/install.sh)"
 # let's publish this only after there is some stability on the schema
       - name: Upload to FifthTry using fastn
-        run: cd lets-de-template.fifthtry.site/ && fastn upload lets-de-template
+        run: cd lets-de-template.fifthtry.site/ && fastn upload fastn-de-template

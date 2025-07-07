@@ -1,17 +1,17 @@
 -- import: fastn
 
--- fastn.package: lets-de.fifthtry.site
-system: lets-de
+-- fastn.package: fastn-de.fifthtry.site
+system: fastn-de
 system-is-confidential: false
 
 -- fastn.dependency: design-system.fifthtry.site
 -- fastn.dependency: lets-auth.fifthtry.site
 
--- fastn.auto-import: lets-de.fifthtry.site/assets
+-- fastn.auto-import: fastn-de.fifthtry.site/assets
 
 -- fastn.auto-import: design-system.fifthtry.site as ds
 -- fastn.auto-import: lets-auth.fifthtry.site as lets-auth
--- fastn.auto-import: lets-de.fifthtry.site as lets-de
+-- fastn.auto-import: fastn-de.fifthtry.site as fastn-de
 
 ;; -- fastn.migration: 0001-initial-migration
 

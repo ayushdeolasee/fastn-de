@@ -1,6 +1,6 @@
 -- import: fastn
 
--- fastn.package: lets-de.fifthtry-community.com
+-- fastn.package: fastn-de.fifthtry-community.com
 
 -- fastn.dependency: design-system.fifthtry.site
 -- fastn.dependency: datetime-v0.fifthtry.site
