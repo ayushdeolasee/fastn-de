@@ -60,9 +60,7 @@ $on-click$: $get-window-position()
 js: $assets.files.js.components.js
 -- end: bottom-bar
 
--- void get-window-position:
+-- void get-window-position():
 js: $assets.files.js.functions.js
 
 getWindowPosition()
-
--- end: get-window-position

@@ -1,8 +1,9 @@
 (function () {
     function getWindowPosition() {
-        console.log("getWindowPosition called")
+        window.document.querySelectorAll(".top-bar").forEach(topBar => {
+            console.log(topBar.getBoundingClientRect())
+        })
     }
-    window.functions = {
-        getWindowPosition
-    }
+    window.getWindowPosition = getWindowPosition;
 }())
+

@@ -15,6 +15,7 @@ anchor: parent
 background.solid: $ds.colors.background.step-1
 border-color: $ds.colors.border
 $on-click$: $ftd.increment($a = $state.z)
+classes: top-bar
 
 -- ds.secondary-button: close
 
