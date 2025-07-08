@@ -1,16 +1,20 @@
+-- import: fastn-de.fifthtry.site/state as state 
+export: z
+
 -- component window:
 string url:
 
 -- ftd.container:
-;; z-index: $z
+z-index: $state.z
 margin.px: 100
 height: hug-content
 width: hug-content
+anchor: parent
 
 -- ftd.container:
 background.solid: $ds.colors.background.step-1
 border-color: $ds.colors.border
-;; ${on-click}: $ftd.increment($a = $window.z)
+$on-click$: $ftd.increment($a = $state.z)
 
 -- ds.secondary-button: close
 

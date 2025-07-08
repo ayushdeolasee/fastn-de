@@ -1,6 +1,9 @@
 -- import: fastn-de.fifthtry.site/ui/window as _
 export: window
 
+-- import: fastn-de.fifthtry.site/state as state 
+export: z
+
 -- ds.page: DE
 margin: $ds.spaces.vertical-gap.zero
 
@@ -8,9 +11,10 @@ margin: $ds.spaces.vertical-gap.zero
 spacing: $ds.spaces.vertical-gap.zero
 background.solid: $ds.colors.background.step-1
 
-
 -- ds.primary-button: Fifthtry
 size: medium 
+
+-- ftd.integer: $state.z
 
 -- ds.copy-regular: Top Bar
 -- end: ds.row
@@ -22,6 +26,8 @@ width: fill-container
 anchor: parent
 top.px: 0
 left.px: 0
+width: hug-content
+height: hug-content
 
 -- window:
 url: https://www.fifthtry.com/
@@ -29,26 +35,34 @@ url: https://www.fifthtry.com/
 -- end: ftd.container
 
 -- ftd.container:
-anchor: parent
-top.px: 25
+top.px: 45
 left.px: 5
+width: hug-content
+height: hug-content
 
 -- window:
-url: https://www.google.com/
+url: https://fastn.com/
 
 -- end: ftd.container
 
 -- end: ftd.container
--- ds.row: 
+-- ds.row:
 background.solid: $ds.colors.background.step-1
+
+-- ftd.text: Get Window Position
+$on-click$: $get-window-position()
+
 -- bottom-bar:
 -- end: ds.row
 -- end: ds.page
 
--- web-component main-component:
-js: $assets.files.js.components.js
--- end: main-component
-
 -- web-component bottom-bar:
 js: $assets.files.js.components.js
 -- end: bottom-bar
+
+-- void get-window-position:
+js: $assets.files.js.functions.js
+
+getWindowPosition()
+
+-- end: get-window-position
