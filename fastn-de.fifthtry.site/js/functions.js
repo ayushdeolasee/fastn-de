@@ -4,8 +4,7 @@
 			var r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
 			return v.toString(16);
 		});
-		console.log(UUID);
-		return UUID.toString();
+		return UUID;
 	}
 	window.generateUUID = generateUUID;
 }())

@@ -6,7 +6,6 @@ export: window
 
 -- ds.page: DE
 margin: $ds.spaces.vertical-gap.zero
-$on-mouse-enter$: $get-window-position()
 
 -- ds.row: 
 spacing: $ds.spaces.vertical-gap.zero
@@ -26,8 +25,6 @@ anchor: parent
 -- show-window: $window
 $loop$: $window-list as $window
 
--- ftd.text: $generate-uuid()
-
 -- end: ftd.container
 
 -- ds.row:
@@ -39,27 +36,19 @@ background.solid: $ds.colors.background.step-1
 -- end: ds.row
 -- end: ds.page
 
--- web-component bottom-bar:
-js: $assets.files.js.components.js
--- end: bottom-bar
-
--- void get-window-position():
-js: $assets.files.js.functions.js
-
-getWindowPosition()
-
-
 -- state.window list $window-list:
 
 -- state.window: https://fifthtry.com/
+id: $generate-uuid()
 
 -- state.window: https://fastn.com/ 
+id: $generate-uuid()
 top: 45
 left: 5
 
 -- end: $window-list
 
--- void generate-uuid():
+-- string generate-uuid():
 js: $assets.files.js.functions.js
 
 generateUUID()

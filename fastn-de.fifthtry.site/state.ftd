@@ -5,4 +5,4 @@ integer top: 0
 integer left: 0 
 
 
--- optional integer $current-window: 
+-- optional string $current-window: 

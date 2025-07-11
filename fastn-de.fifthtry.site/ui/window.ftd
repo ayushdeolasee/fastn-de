@@ -11,7 +11,7 @@ export: window
 caption state.window window:
 
 -- ftd.container:
-;; z-index if { $show-window.window.id == $state.current-window }: 1
+z-index if { $show-window.window.id == $state.current-window }: 1
 z-index: 0 
 anchor: parent
 margin.px: 100
@@ -26,6 +26,7 @@ left.px: $show-window.window.left
 background.solid: $ds.colors.background.step-1
 border-color: $ds.colors.border
 classes: top-bar
+$on-click$: $ftd.set-string($a = $state.current-window, v = $show-window.window.id)
 
 -- ds.secondary-button: close
 
