@@ -1,9 +1,11 @@
 (function () {
-    function getWindowPosition() {
-        window.document.querySelectorAll(".top-bar").forEach(topBar => {
-            console.log(topBar.getBoundingClientRect())
-        })
-    }
-    window.getWindowPosition = getWindowPosition;
+	function generateUUID() {
+		var UUID = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+			var r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
+			return v.toString(16);
+		});
+		console.log(UUID);
+		return UUID.toString();
+	}
+	window.generateUUID = generateUUID;
 }())
-

@@ -1,1 +1,8 @@
--- integer $z: 1 
+-- record window:
+caption string url:
+string id: none
+integer top: 0 
+integer left: 0 
+
+
+-- optional integer $current-window: 

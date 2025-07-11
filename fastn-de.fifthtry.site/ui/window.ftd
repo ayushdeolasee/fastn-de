@@ -1,28 +1,43 @@
 -- import: fastn-de.fifthtry.site/state as state 
-export: z
+export: window, current-window 
 
--- component window:
-string url:
+-- import: fastn-de.fifthtry.site/index as index
+export: window
+
+;; -- import: fastn-de.fifthtry.site/window as window-file
+;; export: $current-index
+
+-- component show-window:
+caption state.window window:
 
 -- ftd.container:
-z-index: $state.z
+;; z-index if { $show-window.window.id == $state.current-window }: 1
+z-index: 0 
+anchor: parent
 margin.px: 100
 height: hug-content
 width: hug-content
-anchor: parent
+min-width.fixed.px: 350
+min-height.fixed.px: 350
+top.px: $show-window.window.top
+left.px: $show-window.window.left
 
 -- ftd.container:
 background.solid: $ds.colors.background.step-1
 border-color: $ds.colors.border
-$on-click$: $ftd.increment($a = $state.z)
 classes: top-bar
 
 -- ds.secondary-button: close
 
 -- end: ftd.container
 
--- ftd.iframe:
-src: $window.url
+-- window-web-component: $show-window.window
 
 -- end: ftd.container
--- end: window
+-- end: show-window
+
+-- web-component window-web-component:
+js: $assets.files.js.components.js
+caption state.window data:
+
+-- end: window-web-component
